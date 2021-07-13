@@ -9,11 +9,11 @@ namespace UserRegistrationProblem
 {
     class UserRegistration
     {
-      //Method to validate first name
+        //Method to validate first name
         public void ValidatingFirstName()
         {
             string pattern = "^[A-Z][a-zA-Z]{2,}";
-            string[] inputs = { "Sou", "gemini", "DEV", "Venkat" ,"So","1Shanthi"};
+            string[] inputs = { "Sou", "gemini", "DEV", "Venkat", "So", "1Shanthi" };
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating First Name of user");
             IterateLoop(inputs, regex);
@@ -28,7 +28,7 @@ namespace UserRegistrationProblem
             IterateLoop(inputs, regex);
         }
         //method to validate email
-         public void ValidatingEmail()
+        public void ValidatingEmail()
         {
             string pattern = @"^[a-zA-z]{3}([\+ \- _ \.]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(\.[a-z]{2,3})*$";
             string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com", "abc", "abc.com", "abc123@gmail.a" };
@@ -41,7 +41,7 @@ namespace UserRegistrationProblem
         public void ValidatingMobileNo()
         {
             string pattern = "^([9][1])+[ ]+[789]{1}[0-9]{9}$";
-            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811","91 7302456786","91 8220523456" };
+            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811", "91 7302456786", "91 8220523456" };
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating Mobile Number of User");
             IterateLoop(inputs, regex);
@@ -49,13 +49,13 @@ namespace UserRegistrationProblem
         //Method to validate Password
         public void ValidatingPassword()
         {
-            string pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";//Minimum 8 characters with one uppercase
-            string[] inputs = { "Soubarnika", "geminika", "SHANTHIV", "Venkat", "9629muthu","SouMuthu"};
+            string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number
+            string[] inputs = { "Soubar20", "geminika", "SRILEKHA", "Venkat123", "1Muthu", "SouMuthu","saikumar21 "};
             Regex regex = new Regex(pattern);
-            Console.WriteLine("validating Password Contains Minimum 8 Charaters");
+            Console.WriteLine("validating Password");
             IterateLoop(inputs, regex);
         }
-        //method to find whether given input is matching with pattern
+
         public static void IterateLoop(string[] arr, Regex regex)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -71,6 +71,8 @@ namespace UserRegistrationProblem
                 }
             }
         }
-
     }
+
+
 }
+
