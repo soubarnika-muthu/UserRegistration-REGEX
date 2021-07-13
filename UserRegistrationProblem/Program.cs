@@ -4,6 +4,7 @@
 //UC3 Validating Email Id
 //UC4 validating Mobile Number of User
 //UC5 validating Password Rule1-MiniMum 8 Characters
+//UC6 validating Password Rule2-Atleast one upper case
 
 namespace UserRegistrationProblem
 {

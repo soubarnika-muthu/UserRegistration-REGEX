@@ -46,7 +46,7 @@ namespace UserRegistrationProblem
             Console.WriteLine("validating Mobile Number of User");
             IterateLoop(inputs, regex);
         }
-        //Method to validate first name
+        //Method to validate Password
         public void ValidatingPassword()
         {
             string pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";//Minimum 8 characters with one uppercase
