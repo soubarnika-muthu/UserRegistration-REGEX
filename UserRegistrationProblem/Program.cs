@@ -9,7 +9,8 @@ namespace UserRegistrationProblem
         {
             Console.WriteLine("Implementaion of User Registration Problem");
             UserRegistration user = new UserRegistration();
-            user.ValidatingFirstName();
+           // user.ValidatingFirstName();
+            user.ValidatingLastName();
         }
     }
 }
