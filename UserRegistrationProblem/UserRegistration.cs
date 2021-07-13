@@ -41,7 +41,7 @@ namespace UserRegistrationProblem
         public void ValidatingMobileNo()
         {
             string pattern = "^([9][1])+[ ]+[789]{1}[0-9]{9}$";
-            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811","91 7302456786" };
+            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811","91 7302456786","91 8220523456" };
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating Mobile Number of User");
             IterateLoop(inputs, regex);
