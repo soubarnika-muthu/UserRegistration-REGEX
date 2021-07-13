@@ -34,7 +34,7 @@ namespace UserRegistrationProblem
             string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com", "abc", "abc.com", "abc123@gmail.a" };
 
             Regex regex = new Regex(pattern);
-            Console.WriteLine("validating Pincodes");
+            Console.WriteLine("validating Email");
             IterateLoop(inputs, regex);
         }
         //method to find whether given input is matching with pattern
