@@ -1,7 +1,8 @@
 ﻿using System;
 //UC1 Validating First Name
 //UC2 Validating Last Name
-//UC2 Validating Email Id
+//UC3 Validating Email Id
+//UC4 validating Mobile Number of User
 
 namespace UserRegistrationProblem
 {
@@ -14,7 +15,8 @@ namespace UserRegistrationProblem
             UserRegistration user = new UserRegistration();
             // user.ValidatingFirstName();
             //user.ValidatingLastName();
-            user.ValidatingEmail();
+            //user.ValidatingEmail();
+            user.ValidatingMobileNo();
         }
     }
 }

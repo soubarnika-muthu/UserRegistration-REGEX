@@ -37,6 +37,15 @@ namespace UserRegistrationProblem
             Console.WriteLine("validating Email");
             IterateLoop(inputs, regex);
         }
+        //Method to validate Mobile Number of User
+        public void ValidatingMobileNo()
+        {
+            string pattern = "^([9][1])+[ ]+[789]{1}[0-9]{9}$";
+            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811","91 7302456786" };
+            Regex regex = new Regex(pattern);
+            Console.WriteLine("validating Mobile Number of User");
+            IterateLoop(inputs, regex);
+        }
         //method to find whether given input is matching with pattern
         public static void IterateLoop(string[] arr, Regex regex)
         {
