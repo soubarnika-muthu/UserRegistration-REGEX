@@ -27,6 +27,16 @@ namespace UserRegistrationProblem
             Console.WriteLine("validating Last Name of User");
             IterateLoop(inputs, regex);
         }
+        //method to validate email
+         public void ValidatingEmail()
+        {
+            string pattern = @"^[a-zA-z]{3}([\+ \- _ \.]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(\.[a-z]{2,3})*$";
+            string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com", "abc", "abc.com", "abc123@gmail.a" };
+
+            Regex regex = new Regex(pattern);
+            Console.WriteLine("validating Pincodes");
+            IterateLoop(inputs, regex);
+        }
         //method to find whether given input is matching with pattern
         public static void IterateLoop(string[] arr, Regex regex)
         {
