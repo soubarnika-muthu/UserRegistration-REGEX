@@ -49,8 +49,8 @@ namespace UserRegistrationProblem
         //Method to validate Password
         public void ValidatingPassword()
         {
-            string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number
-            string[] inputs = { "Soubar20", "geminika", "SRILEKHA", "Venkat123", "1Muthu", "SouMuthu","saikumar21 "};
+            string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number,special character
+            string[] inputs = { "Soubar@20", "geminika@", "SRILEKHA", "Venkat123", "1Muthu", "Sou@Muthu","Srilekha@2021 ","Nandhini&962"};
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating Password");
             IterateLoop(inputs, regex);
