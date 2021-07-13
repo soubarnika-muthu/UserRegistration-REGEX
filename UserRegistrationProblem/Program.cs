@@ -3,6 +3,7 @@
 //UC2 Validating Last Name
 //UC3 Validating Email Id
 //UC4 validating Mobile Number of User
+//UC5 validating Password Rule1-MiniMum 8 Characters
 
 namespace UserRegistrationProblem
 {
@@ -16,7 +17,8 @@ namespace UserRegistrationProblem
             // user.ValidatingFirstName();
             //user.ValidatingLastName();
             //user.ValidatingEmail();
-            user.ValidatingMobileNo();
+            // user.ValidatingMobileNo();
+            user.ValidatingPassword();
         }
     }
 }

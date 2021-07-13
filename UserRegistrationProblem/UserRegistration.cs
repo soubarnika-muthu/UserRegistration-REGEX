@@ -46,6 +46,15 @@ namespace UserRegistrationProblem
             Console.WriteLine("validating Mobile Number of User");
             IterateLoop(inputs, regex);
         }
+        //Method to validate first name
+        public void ValidatingPassword()
+        {
+            string pattern = "^[a-zA-z0-9]{8,}";//Minimum 8 characters
+            string[] inputs = { "Soubarnika", "gemini", "DEV", "Venkat123", "9629muthu", "1Shan" };
+            Regex regex = new Regex(pattern);
+            Console.WriteLine("validating Password Contains Minimum 8 Charaters");
+            IterateLoop(inputs, regex);
+        }
         //method to find whether given input is matching with pattern
         public static void IterateLoop(string[] arr, Regex regex)
         {
