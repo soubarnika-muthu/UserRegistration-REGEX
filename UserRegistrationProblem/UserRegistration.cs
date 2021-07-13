@@ -50,7 +50,7 @@ namespace UserRegistrationProblem
         public void ValidatingPassword()
         {
             string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number,special character
-            string[] inputs = { "Soubar@20", "geminika@", "SRILEKHA", "Venkat123", "1Muthu", "Sou@Muthu","Srilekha@2021 ","Nandhini&962"};
+            string[] inputs = { "Soubar@20", "geminika@", "SRILEKHA", "Venkat123", "1Muthu", "Sou@Muthu","Srilekha@2021 ","Nandhini&962","shanthi@222"};
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating Password");
             IterateLoop(inputs, regex);
