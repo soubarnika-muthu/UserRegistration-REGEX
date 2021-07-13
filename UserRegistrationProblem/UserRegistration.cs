@@ -49,8 +49,8 @@ namespace UserRegistrationProblem
         //Method to validate first name
         public void ValidatingPassword()
         {
-            string pattern = "^[a-zA-z0-9]{8,}";//Minimum 8 characters
-            string[] inputs = { "Soubarnika", "gemini", "DEV", "Venkat123", "9629muthu", "1Shan" };
+            string pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";//Minimum 8 characters with one uppercase
+            string[] inputs = { "Soubarnika", "geminika", "SHANTHIV", "Venkat", "9629muthu","SouMuthu"};
             Regex regex = new Regex(pattern);
             Console.WriteLine("validating Password Contains Minimum 8 Charaters");
             IterateLoop(inputs, regex);
