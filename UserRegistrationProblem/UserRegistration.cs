@@ -27,6 +27,7 @@ namespace UserRegistrationProblem
             Console.WriteLine("validating Last Name of User");
             IterateLoop(inputs, regex);
         }
+        //method to find whether given input is matching with pattern
         public static void IterateLoop(string[] arr, Regex regex)
         {
             for (int i = 0; i < arr.Length; i++)
