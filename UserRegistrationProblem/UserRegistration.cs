@@ -7,73 +7,139 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationProblem
 {
-    class UserRegistration
+    public class UserRegistration
     {
         //Method to validate first name
-        public void ValidatingFirstName()
+        public string ValidatingFirstName(string name)
         {
             string pattern = "^[A-Z][a-zA-Z]{2,}";
-            string[] inputs = { "Sou", "gemini", "DEV", "Venkat", "So", "1Shanthi" };
+            // string[] name = { "Sou", "gemini", "DEV", "Venkat", "So", "1Shanthi" };
             Regex regex = new Regex(pattern);
-            Console.WriteLine("validating First Name of user");
-            IterateLoop(inputs, regex);
-        }
-        //Method to validate Last name of User
-        public void ValidatingLastName()
-        {
-            string pattern = "^[A-Z][a-zA-Z]{2,}";
-            string[] inputs = { "Muthu", "krish", "KUMAR", "2Venkat", "s", "S" };
-            Regex regex = new Regex(pattern);
-            Console.WriteLine("validating Last Name of User");
-            IterateLoop(inputs, regex);
-        }
-        //method to validate email
-        public void ValidatingEmail()
-        {
-            string pattern = @"^[a-zA-z]{3}([\+ \- _ \.]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(\.[a-z]{2,3})*$";
-            string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" ,"abc","abc@.com","abc123@gmail.a", "abc123@.com" ,
-            "abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a"};
 
-            Regex regex = new Regex(pattern);
-            Console.WriteLine("validating  Email Ids");
-            IterateLoop(inputs, regex);
-        }
-        //Method to validate Mobile Number of User
-        public void ValidatingMobileNo()
-        {
-            string pattern = "^([9][1])+[ ]+[789]{1}[0-9]{9}$";
-            string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811", "91 7302456786", "91 8220523456" };
-            Regex regex = new Regex(pattern);
-            Console.WriteLine("validating Mobile Number of User");
-            IterateLoop(inputs, regex);
-        }
-        //Method to validate Password
-        public void ValidatingPassword()
-        {
-            string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number,special character
-            string[] inputs = { "Soubar@20", "geminika@", "SRILEKHA", "Venkat123", "1Muthu", "Sou@Muthu","Srilekha@2021 ","Nandhini&962","shanthi@222"};
-            Regex regex = new Regex(pattern);
-            Console.WriteLine("validating Password");
-            IterateLoop(inputs, regex);
-        }
-
-        public static void IterateLoop(string[] arr, Regex regex)
-        {
-            for (int i = 0; i < arr.Length; i++)
+            try
             {
-                bool result = regex.IsMatch(arr[i]);
-                if (result == true)
+                if (name == null)
                 {
-                    Console.WriteLine(arr[i] + "------->" + "Valid");
+                    throw new CustomException(CustomException.ExceptionType.NULL_EXCEPTION, "Name should not be null");
+                }
+                if (name == "")
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Name should not be empty");
+                }
+                if (regex.IsMatch(name))
+                {
+                    return "1";
                 }
                 else
                 {
-                    Console.WriteLine(arr[i] + "------->" + "Invalid");
+                    return "0";
                 }
             }
+            catch (NullReferenceException e)
+            {
+                return (e.Message);
+            }
         }
+        //Method to validate Last name of User
+        public void ValidatingLastName(string lname)
+        {
+            string pattern = "^[A-Z][a-zA-Z]{2,}";
+            // string[] inputs = { "Muthu", "krish", "KUMAR", "2Venkat", "s", "S" };
+            Regex regex = new Regex(pattern);
+            Console.WriteLine("validating Last Name of User");
+
+        }
+        //method to validate email
+        public string ValidatingEmail(string mail)
+        {
+            string pattern = @"^[a-zA-z]{3}([\+ \- _ \.]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(\.[a-z]{2,3})*$";
+            // string[] inputs = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" ,"abc","abc@.com","abc123@gmail.a", "abc123@.com" ,
+            // "abc123@.com.com",".abc@abc.com","abc()*@gmail.com","abc@%*.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a"};
+
+            Regex regex = new Regex(pattern);
+            try
+            {
+                if (regex.IsMatch(mail))
+                {
+                    return "1";
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+            catch (Exception e)
+            {
+                return "Email should not be null";
+            }
+
+
+        }
+        //Method to validate Mobile Number of User
+        public string ValidatingMobileNo(string number)
+        {
+            string pattern = "^([9][1])+[ ]+[789]{1}[0-9]{9}$";
+            // string[] inputs = { "919629522931", "91 8220538351", "9629459258", "7435627891", "91 9629", "19 9234567811", "91 7302456786", "91 8220523456" };
+            Regex regex = new Regex(pattern);
+            try
+            {
+                if (number == null)
+                {
+                    throw new CustomException(CustomException.ExceptionType.NULL_EXCEPTION, "Number should not be null");
+                }
+                if (number == "")
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Number should not be empty");
+                }
+                if (regex.IsMatch(number))
+                {
+                    return "1";
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+            catch (Exception e)
+            {
+                return (e.Message);
+            }
+        }
+        //Method to validate Password
+        public string ValidatingPassword(string password)
+        {
+            string pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()]).{8,}$";//minimum 8 characters with atleast one upper ,lowercase ,number,special character
+                                                                                           //  string[] inputs = { "Soubar@20", "geminika@", "SRILEKHA", "Venkat123", "1Muthu", "Sou@Muthu","Srilekha@2021 ","Nandhini&962","shanthi@222"};
+            Regex regex = new Regex(pattern);
+            try
+            {
+                if (password == null)
+                {
+                    throw new CustomException(CustomException.ExceptionType.NULL_EXCEPTION, "Password should not be null");
+                }
+                if (password == "")
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Password should not be empty");
+                }
+                if (regex.IsMatch(password))
+                {
+                    return "1";
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+            catch (Exception e)
+            {
+                return (e.Message);
+            }
+
+        }
+
+
     }
 
-
 }
+
 

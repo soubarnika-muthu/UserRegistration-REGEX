@@ -20,7 +20,7 @@ namespace UserRegistrationProblem
             UserRegistration user = new UserRegistration();
             // user.ValidatingFirstName();
             //user.ValidatingLastName();
-            user.ValidatingEmail();
+           // user.ValidatingEmail();
             // user.ValidatingMobileNo();
            
             //user.ValidatingPassword();
