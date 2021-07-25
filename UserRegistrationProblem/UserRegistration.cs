@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
+using System.ComponentModel.DataAnnotations;
+
 namespace UserRegistrationProblem
 {
     public class UserRegistration
@@ -136,7 +138,37 @@ namespace UserRegistrationProblem
             }
 
         }
+        public static string TestUserRegistration(UserRegistrationAnnotation userRegistration)
+        {
+            //creating object for validation context and passing the validation class
+            ValidationContext validationContext = new ValidationContext(userRegistration, null, null);
+            //store the resukt of validation in list
+            List<ValidationResult> validationResults = new List<ValidationResult>();
+            //if all the result in lista re true 
+            bool valid = Validator.TryValidateObject(userRegistration, validationContext, validationResults, true);
+            try
+            {
+                //if any one is not valid then return the error message
+                if (!valid)
+                {
+                    foreach (ValidationResult i in validationResults)
+                    {
+                        return "Sad";
+                    }
+                    return "Sad";
+                }
+                //else return validation satisfied
+                else
+                {
+                    return "Happy";
+                }
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
 
+        }
 
     }
 
