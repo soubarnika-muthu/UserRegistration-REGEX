@@ -260,12 +260,24 @@ namespace UserRegistrationTest
         //it passes the parameter to the test method 
         [DataRow("abc@gmail.com", "1")]
         [DataRow("abc-.gail.com", "0")]
-        [DataRow("abcdf2.com", "1")]
+        [DataRow("abcdf2.com", "0")]
         [DataRow("abc+h@tvs.com", "1")]
         //method to run multiple test cases
         public void TestParameterizeTest(string eMail, string expected)
         {
             string actual = userRegistration.ValidatingEmail(eMail);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CheckValidityUsingCustomException()
+        {
+            user.firstName = "Soubarnika";
+            user.lastName = "Muthu";
+            user.phoneNumber = "99087356";
+            user.EmailAddress = "abc@gmail.com";
+            user.Password = "Exo@chanbaek21";
+            string expected = "Phone number should exactly 10";
+            string actual = UserRegistration.TestUserRegistration(user);
             Assert.AreEqual(expected, actual);
         }
 

@@ -153,9 +153,10 @@ namespace UserRegistrationProblem
                 {
                     foreach (ValidationResult i in validationResults)
                     {
-                        return "Sad";
+                        //throwing invalid extry exception in custom exception class
+                        throw new CustomException(CustomException.ExceptionType.INVALID_ENTRY_EXCEPTION, "" + i.ToString());
                     }
-                    return "Sad";
+                    throw new CustomException(CustomException.ExceptionType.NULL_FIELD_EXCEPTION, "No Field Found");
                 }
                 //else return validation satisfied
                 else
@@ -167,7 +168,6 @@ namespace UserRegistrationProblem
             {
                 return e.Message;
             }
-
         }
 
     }

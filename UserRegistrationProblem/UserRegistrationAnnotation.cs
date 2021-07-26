@@ -7,7 +7,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UserRegistrationProblem
 {
-   public  class UserRegistrationAnnotation
+    /// <summary>
+    /// checking the validity of the user using annotation
+    /// </summary>
+    public class UserRegistrationAnnotation
     {
         //required consition is the field should not be null
         [Required(ErrorMessage = "{0} is required")]
