@@ -248,7 +248,7 @@ namespace UserRegistrationTest
         {
             user.firstName = "Soubarnika";
             user.lastName = "Muthu";
-            user.phoneNumber = "99087356";
+            user.phoneNumber = "9908735";
             user.EmailAddress = "abc@gmail.com";
             user.Password = "Exo@chanbaek21";
             string expected = "Sad";
